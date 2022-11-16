@@ -48,7 +48,7 @@ function mysteryBox(): number {
 
 我们可以用表示集合关系的维恩图，表达类型间的兼容关系。如前文出现的类型 `233` 和类型 `number` ：
 
-![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/blob/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/1-x.svg)
+![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/1-x.svg)
 - `233` 向下兼容 `number` 。
 - `233` 是 `number` 的子类型，`233` 是 `number` 的子集。
 - `number` 是 `233` 的超类型，`number` 是 `233` 的超集。
@@ -95,7 +95,7 @@ function mysteryBox(): number {
 
 如果用维恩图表示 `number` ，`string` 和 `unknown` 之间的关系，则是这样的：
 
-![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/blob/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/2-x.svg)
+![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/2-x.svg)
 - `number` 和 `string` 没有包含关系，不能充分重叠。
 - `number` 是 `unknown` 的子集，与 `unknown` 充分重叠。
 - `string` 是 `unknown` 的子集，与 `unknown` 充分重叠。
@@ -182,7 +182,7 @@ const zoo: string = baz;
 
 如果用维恩图表示 `number` ，`string` ，`unknown` ，`never` 之间的关系，则是这样的：
 
-![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/blob/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/2.1-x.svg)
+![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/2.1-x.svg)
 - `number` & `string` 为 `never` 。
 - `number` 和 `string` 都是 `unknown` 的子集。
 
@@ -343,9 +343,9 @@ foo = bar;
 
 相关维恩图：
 
-![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/blob/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/3-x.svg)
+![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/3-x.svg)
 
-![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/blob/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/4-x.svg)
+![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/4-x.svg)
 
 #### `{}`
 
@@ -395,7 +395,7 @@ foo = bar; // 不能向下兼容，报错了
 
 特别的 `unknown` 是任何类型的超类型，`unknown[]` 即是任何数组类型的超类型。
 
-![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/blob/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/5-x.svg)
+![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/5-x.svg)
 
 ### 元组类型
 
@@ -420,7 +420,7 @@ bar = baz; // 不能向下兼容，报错了
 
 相关维恩图：
 
-![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/blob/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/6-x.svg)
+![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/6-x.svg)
 
 #### rest
 
