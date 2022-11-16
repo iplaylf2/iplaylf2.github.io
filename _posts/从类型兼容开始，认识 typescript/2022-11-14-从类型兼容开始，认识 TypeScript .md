@@ -219,19 +219,8 @@ type bar = unknown & string; // type bar = string
 `any` 太特殊了，我无法用集合的语言表达。~~维恩图不会画了。~~
 
 但我可以从包含途径出发，画出以下图表：
-```mermaid!
-flowchart RL
-  any --> never
+[![](https://mermaid.ink/img/pako:eNptkLFuwjAQhl_FuhlSFbYMndqtXWADdzjiC0SNz-hyLkKId8eOS4OqTvZ9_6ff8l2gCY6ghrYPp-aAomb1btkY5LOZz18M0zeJ5Yw4-h3JSFOayaDS8f6RCA36vK2q6vMvXUy0FN2D5RSUvhxE_uJw4u3PaZ5yVZHGJx6cX7j4Dy5hBp7EY-fSLy9ZsaAH8mShTldHLcZeLVi-JjUeHSq9uU6DQK0SaQYYNazP3Nzn4rx2uBf0ULfYD4kekTchTDONHR9lu-OSrzc3mHhB?type=png)](https://mermaid.live/edit#pako:eNptkLFuwjAQhl_FuhlSFbYMndqtXWADdzjiC0SNz-hyLkKId8eOS4OqTvZ9_6ff8l2gCY6ghrYPp-aAomb1btkY5LOZz18M0zeJ5Yw4-h3JSFOayaDS8f6RCA36vK2q6vMvXUy0FN2D5RSUvhxE_uJw4u3PaZ5yVZHGJx6cX7j4Dy5hBp7EY-fSLy9ZsaAH8mShTldHLcZeLVi-JjUeHSq9uU6DQK0SaQYYNazP3Nzn4rx2uBf0ULfYD4kekTchTDONHR9lu-OSrzc3mHhB)
 
-  number --> any
-  string --> any
-  rest1[...] --> any
-  rest2[...] --> number
-  rest3[...] --> string
-  unknown[unknown / any] --> rest1
-  unknown --> rest2
-  unknown --> rest3
-```
 - 箭头左边的项包含于右边的项。
 - `any` 在 TypeScript 中可以兼容 `never` 以外任何的类型，我们不妨认为他是 `never` 以外任何类型的子类型，同时也是任何类型的超类型。因此上图有两个 `any` 。
 
