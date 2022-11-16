@@ -48,7 +48,7 @@ function mysteryBox(): number {
 
 我们可以用表示集合关系的维恩图，表达类型间的兼容关系。如前文出现的类型 `233` 和类型 `number` ：
 
-![img](./1-x.svg)
+![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/1-x.svg)
 - `233` 向下兼容 `number` 。
 - `233` 是 `number` 的子类型，`233` 是 `number` 的子集。
 - `number` 是 `233` 的超类型，`number` 是 `233` 的超集。
@@ -95,7 +95,7 @@ function mysteryBox(): number {
 
 如果用维恩图表示 `number` ，`string` 和 `unknown` 之间的关系，则是这样的：
 
-![img](./2-x.svg)
+![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/2-x.svg)
 - `number` 和 `string` 没有包含关系，不能充分重叠。
 - `number` 是 `unknown` 的子集，与 `unknown` 充分重叠。
 - `string` 是 `unknown` 的子集，与 `unknown` 充分重叠。
@@ -182,7 +182,7 @@ const zoo: string = baz;
 
 如果用维恩图表示 `number` ，`string` ，`unknown` ，`never` 之间的关系，则是这样的：
 
-![img](./2.1-x.svg)
+![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/2.1-x.svg)
 - `number` & `string` 为 `never` 。
 - `number` 和 `string` 都是 `unknown` 的子集。
 
@@ -219,19 +219,9 @@ type bar = unknown & string; // type bar = string
 `any` 太特殊了，我无法用集合的语言表达。~~维恩图不会画了。~~
 
 但我可以从包含途径出发，画出以下图表：
-```mermaid
-flowchart RL
-  any --> never
 
-  number --> any
-  string --> any
-  rest1[...] --> any
-  rest2[...] --> number
-  rest3[...] --> string
-  unknown[unknown / any] --> rest1
-  unknown --> rest2
-  unknown --> rest3
-```
+[![](https://mermaid.ink/img/pako:eNptkLFuwjAQhl_FuhlSFbYMndqtXWADdzjiC0SNz-hyLkKId8eOS4OqTvZ9_6ff8l2gCY6ghrYPp-aAomb1btkY5LOZz18M0zeJ5Yw4-h3JSFOayaDS8f6RCA36vK2q6vMvXUy0FN2D5RSUvhxE_uJw4u3PaZ5yVZHGJx6cX7j4Dy5hBp7EY-fSLy9ZsaAH8mShTldHLcZeLVi-JjUeHSq9uU6DQK0SaQYYNazP3Nzn4rx2uBf0ULfYD4kekTchTDONHR9lu-OSrzc3mHhB?type=png)](https://mermaid.live/edit#pako:eNptkLFuwjAQhl_FuhlSFbYMndqtXWADdzjiC0SNz-hyLkKId8eOS4OqTvZ9_6ff8l2gCY6ghrYPp-aAomb1btkY5LOZz18M0zeJ5Yw4-h3JSFOayaDS8f6RCA36vK2q6vMvXUy0FN2D5RSUvhxE_uJw4u3PaZ5yVZHGJx6cX7j4Dy5hBp7EY-fSLy9ZsaAH8mShTldHLcZeLVi-JjUeHSq9uU6DQK0SaQYYNazP3Nzn4rx2uBf0ULfYD4kekTchTDONHR9lu-OSrzc3mHhB)
+
 - 箭头左边的项包含于右边的项。
 - `any` 在 TypeScript 中可以兼容 `never` 以外任何的类型，我们不妨认为他是 `never` 以外任何类型的子类型，同时也是任何类型的超类型。因此上图有两个 `any` 。
 
@@ -343,9 +333,9 @@ foo = bar;
 
 相关维恩图：
 
-![img](./3-x.svg)
+![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/3-x.svg)
 
-![img](./4-x.svg)
+![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/4-x.svg)
 
 #### `{}`
 
@@ -374,7 +364,7 @@ type qux = {} & string; // type qux = string
 - 通过求交集的方式，得出 `{}` 与 `null` / `undefined` 没有包含关系。
 - 通过求交集的方式，得出 `{}` 是 `number` / `string` 的超集、超类型。
 
-*（ typescript-eslint 认为 `{}` 代表着非空的值，不是大众预期的“空对象”，从而[不推荐使用](https://github.com/typescript-eslint/typescript-eslint/issues/2063#issuecomment-675156492)。）*
+*（ typescript-eslint 认为 `{}` 代表着非空的值，不是大众预期的“空对象”，从而[不推荐使用](https://raw.githubusercontent.com/typescript-eslint/typescript-eslint/issues/2063#issuecomment-675156492)。）*
 
 有两个问题留给大家思考：
 1. JavaScript 的 `number` 经过装箱成为 `Number` 对象后，能表现出 JavaScript 对象的性质。请问，在 TypeScript 中 `number` 和 `Number` 的兼容关系是怎样的？
@@ -395,7 +385,7 @@ foo = bar; // 不能向下兼容，报错了
 
 特别的 `unknown` 是任何类型的超类型，`unknown[]` 即是任何数组类型的超类型。
 
-![img](./5-x.svg)
+![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/5-x.svg)
 
 ### 元组类型
 
@@ -420,7 +410,7 @@ bar = baz; // 不能向下兼容，报错了
 
 相关维恩图：
 
-![img](./6-x.svg)
+![img](https://raw.githubusercontent.com/iplaylf2/iplaylf2.github.io/master/_posts/%E4%BB%8E%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%AE%A4%E8%AF%86%20typescript/6-x.svg)
 
 #### rest
 
@@ -938,7 +928,7 @@ type Bar = Equal<(x?: unknown) => unknown, () => unknown>; // type Bar = true
 ```
 - 以及更多的测试用例，此处不表。
 
-还有相关的[讨论](https://github.com/microsoft/TypeScript/issues/27024)。在讨论里，是另一种实现的测试覆盖更全面，也更受欢迎。
+还有相关的[讨论](https://raw.githubusercontent.com/microsoft/TypeScript/issues/27024)。在讨论里，是另一种实现的测试覆盖更全面，也更受欢迎。
 
 但我认为从集合理论出发实现的 `Equal<A, B>` 才是更合理的。
 
