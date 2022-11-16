@@ -1,0 +1,12 @@
+title: 镜
+description: >- 
+  水中镜
+baseurl: ""
+url: ""
+github_username:  iplaylf2
+
+theme: minima
+plugins:
+  - jekyll-feed
+
+markdown: GFM
