@@ -219,7 +219,7 @@ type bar = unknown & string; // type bar = string
 `any` 太特殊了，我无法用集合的语言表达。~~维恩图不会画了。~~
 
 但我可以从包含途径出发，画出以下图表：
-```mermaid
+```mermaid!
 flowchart RL
   any --> never
 
